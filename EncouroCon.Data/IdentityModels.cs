@@ -46,7 +46,6 @@ namespace EncouroCon.Data
                 .Add(new IdentityUserRoleConfiguration());
         }
     }
-}
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
     {

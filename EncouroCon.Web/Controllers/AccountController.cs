@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using EncouroCon.Web.Models;
+using EncouroCon.Data;
 
 namespace EncouroCon.Web.Controllers
 {
