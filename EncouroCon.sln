@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncouroCon.Data", "EncouroC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncouroCon.Contracts", "EncouroCon.Contracts\EncouroCon.Contracts.csproj", "{22D506DD-25C6-42C1-B08A-276A6C5A7C4E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E9614A9C-DAD6-4A8E-AE20-18C81B757C02}"
+	ProjectSection(SolutionItems) = preProject
+		plan.txt = plan.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
