@@ -8,18 +8,29 @@ User:
 		-Good days (calculated)
 		-Bad days (calculated)
 		-DayComments
+		-Reason list (used for future prompts)
+
+DayComment:
+	//Tracks a specific day the user logged in, optional extra info
+	//Props:
+		-ID
+		-OwnerID
+		-WasGood (boolean)
+		-Reasons (Optional, populated as empty if not entered)
+		-Date
 
 Map:
 	//Contains "planets"
 	//Props:
 		-ID
-		-Planets(locations)
+		-OwnerID
+		-Planets(string of info) Format: [x,y|colour|value|name]  ex: "[100,200|#ff0|3|garba]"
 		-Edges
 
 Planet:
 	//Part of Map
 	//Props:
-		-ID (derived from map)
 		-Location (x,y)
-		-Color
+		-Colour
 		-Value (reinforcements)
+		-Name
