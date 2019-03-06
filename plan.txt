@@ -1,0 +1,25 @@
+User:
+	//Basic user
+	//Props:
+		-ID
+		-Name
+		-Maps (*user can be in multiple maps)
+		-Total Days
+		-Good days (calculated)
+		-Bad days (calculated)
+		-DayComments
+
+Map:
+	//Contains "planets"
+	//Props:
+		-ID
+		-Planets(locations)
+		-Edges
+
+Planet:
+	//Part of Map
+	//Props:
+		-ID (derived from map)
+		-Location (x,y)
+		-Color
+		-Value (reinforcements)
