@@ -8,5 +8,6 @@ namespace EncouroCon.Services
 {
     public class MapService
     {
+
     }
 }
