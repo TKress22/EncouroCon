@@ -1,4 +1,5 @@
 ﻿using EncouroCon.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace EncouroCon.Web.Controllers
         // GET: Game
         public ActionResult Index()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var model = new HolderModel(userId);
             return View();
         }
         public ActionResult DayStats()
