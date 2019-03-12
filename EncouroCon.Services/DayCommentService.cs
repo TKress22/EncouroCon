@@ -8,5 +8,11 @@ namespace EncouroCon.Services
 {
     public class DayCommentService
     {
+        private readonly Guid _userID;
+
+        public DayCommentService(Guid ID)
+        {
+            _userID = ID;
+        }
     }
 }

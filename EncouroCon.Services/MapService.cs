@@ -8,6 +8,11 @@ namespace EncouroCon.Services
 {
     public class MapService
     {
+        private readonly Guid _userID;
 
+        public MapService(Guid ID)
+        {
+            _userID = ID;
+        }
     }
 }
