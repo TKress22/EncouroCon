@@ -18,10 +18,9 @@ namespace EncouroCon.Web.Controllers
             var model = new HolderModel(userId);
             return View();
         }
-        public ActionResult DayStats()
+        public ActionResult Setup()
         {
-            var model = new DayCommentListItem[0];
-            return View(model);
+            return View();
         }
     }
 }
