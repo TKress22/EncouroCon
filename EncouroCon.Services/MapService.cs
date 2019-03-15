@@ -59,5 +59,22 @@ namespace EncouroCon.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public MapFetch GetMapByID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Map
+                        .Single(e => e.MapID == id && e.OwnerID == _userID);
+                return
+                    new MapFetch
+                    {                
+                        Colours = entity.Colours,
+                        Planets = entity.PlanetData,
+                        Edges = entity.Edges
+                    };
+            }
+        }
     }
 }
