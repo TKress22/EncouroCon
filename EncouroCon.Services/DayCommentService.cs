@@ -20,5 +20,13 @@ namespace EncouroCon.Services
         {
             return true;
         }
+        public bool EditComment(DayCommentListItem model)
+        {
+            return true;
+        }
+        public bool DeleteComment(int id)
+        {
+            return true;
+        }
     }
 }

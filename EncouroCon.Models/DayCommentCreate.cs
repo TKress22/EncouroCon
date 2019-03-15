@@ -8,6 +8,9 @@ namespace EncouroCon.Models
 {
     public class DayCommentCreate
     {
-
+        public Guid OwnerID { get; set; }
+        public bool WasGood { get; set; }
+        public string Reason { get; set; }
+        public DateTimeOffset CreatedDate { get; set; }
     }
 }
