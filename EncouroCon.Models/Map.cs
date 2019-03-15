@@ -9,6 +9,7 @@ namespace EncouroCon.Models
    public class Map
     {
         public int MapID { get; set; }
+        public Guid OwnerID { get; set; }
         public string Colours { get; set; }
         public string Planets { get; set; }
         public string Edges { get; set; }
