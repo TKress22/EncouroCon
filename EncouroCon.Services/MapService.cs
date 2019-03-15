@@ -14,5 +14,9 @@ namespace EncouroCon.Services
         {
             _userID = ID;
         }
+        //public bool CreateMap(Map model)
+        //{
+        //    return ctx.SaveChanges() == 1;
+        //}
     }
 }
