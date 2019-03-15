@@ -56,19 +56,12 @@
   <ItemGroup>
     <Compile Include="DayCommentCreate.cs" />
     <Compile Include="DayCommentListItem.cs" />
-    <Compile Include="HolderModel.cs" />
-    <Compile Include="Map.cs" />
+    <Compile Include="MapCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EncouroCon.Services\EncouroCon.Services.csproj">
-      <Project>{3BB31F39-BAA3-4D3D-8339-6C667220C5D5}</Project>
-      <Name>EncouroCon.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

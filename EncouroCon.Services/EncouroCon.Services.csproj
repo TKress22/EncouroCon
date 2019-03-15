@@ -62,5 +62,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EncouroCon.Data\EncouroCon.Data.csproj">
+      <Project>{fca7c215-1437-408b-8181-0e6e3a6a1ee6}</Project>
+      <Name>EncouroCon.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EncouroCon.Models\EncouroCon.Models.csproj">
+      <Project>{47bcc051-c22e-40d8-8f22-30bef8527273}</Project>
+      <Name>EncouroCon.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

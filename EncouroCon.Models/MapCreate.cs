@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EncouroCon.Data
+namespace EncouroCon.Models
 {
-    public class Map
+   public class MapCreate
     {
         public int MapID { get; set; }
         public Guid OwnerID { get; set; }
         public string Colours { get; set; }
-        public string PlanetData { get; set; } //Format: [x,y|colour|value|name]  ex: "[100,200|#ff0|3|garba]"
-        public string Edges { get; set; } //Format: [(4,5)(1,2)]
+        public string Planets { get; set; }
+        public string Edges { get; set; }
     }
 }

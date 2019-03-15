@@ -33,6 +33,7 @@ namespace EncouroCon.Data
         }
 
         public DbSet<DayComment> DayComment { get; set; }
+        public DbSet<Map> Map { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

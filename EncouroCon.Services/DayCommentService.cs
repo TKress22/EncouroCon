@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EncouroCon.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,11 @@ namespace EncouroCon.Services
         public DayCommentService(Guid ID)
         {
             _userID = ID;
+        }
+
+        public bool CreateComment(DayCommentCreate model)
+        {
+            return true;
         }
     }
 }
