@@ -1,4 +1,5 @@
-﻿using EncouroCon.Models;
+﻿using EncouroCon.Data;
+using EncouroCon.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,19 @@ namespace EncouroCon.Services
 
         public bool CreateComment(DayCommentCreate model)
         {
-            return true;
+            var entity =
+                new DayComment()
+                {
+                    OwnerID = _userID,
+                    WasGood = model.WasGood,
+                    Reason = model.Reason,
+                    CreatedDate = model.CreatedDate
+                };
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.DayComment.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
         }
         public bool EditComment(DayCommentListItem model)
         {
@@ -28,5 +41,6 @@ namespace EncouroCon.Services
         {
             return true;
         }
+
     }
 }
