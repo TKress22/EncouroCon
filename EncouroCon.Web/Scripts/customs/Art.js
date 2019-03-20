@@ -9,9 +9,9 @@ function drawEdge(ctx, p1, p2) {
 function drawBologna() {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    var bolval = document.getElementById("holdy").value;
-    //var bologna = "#f298c5";
-    var bologna = bolval;
+    //var bolval = document.getElementById("holdy").value;
+    var bologna = "#f298c5";
+    //var bologna = bolval;
 
     ctx.beginPath();
     ctx.fillStyle = bologna;

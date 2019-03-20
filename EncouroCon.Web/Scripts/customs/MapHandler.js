@@ -1,2 +1,1 @@
 ﻿drawBologna();
-console.log("YE?");
