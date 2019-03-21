@@ -22,6 +22,7 @@ namespace EncouroCon.Services
                 new Map()
                 {
                     OwnerID = _userID,
+                    StruggleName = model.StruggleName,
                     Colours = model.Colours,
                     PlanetData = model.Planets,
                     Edges = model.Edges
@@ -69,7 +70,8 @@ namespace EncouroCon.Services
                         .Single(e => e.MapID == id && e.OwnerID == _userID);
                 return
                     new MapFetch
-                    {                
+                    {
+                        StruggleName = entity.StruggleName,
                         Colours = entity.Colours,
                         Planets = entity.PlanetData,
                         Edges = entity.Edges
