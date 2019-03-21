@@ -1,6 +1,6 @@
 Checks:
  -Setup Page:
-	-Struggle name
+	X-Struggle name
 	-Favourite colour
 	-Rep colour
 	-Rules

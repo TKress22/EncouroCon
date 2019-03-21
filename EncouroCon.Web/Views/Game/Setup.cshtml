@@ -1,10 +1,13 @@
-﻿@model EncouroCon.Web.Controllers.HolderModel
+﻿@model EncouroCon.Models.MapCreate
 @{
     ViewBag.Title = "Setup";
 }
 
 <h2>Welcome</h2>
 
+@Html.DisplayNameFor(model => model.StruggleName)
+@Html.EditorFor(model => model.StruggleName)
+<br />
 <canvas id="canvas"></canvas>
 <script src="../Scripts/customs/Art.js"></script>
 <script src="../Scripts/customs/MapHandler.js"></script>
