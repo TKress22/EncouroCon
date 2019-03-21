@@ -1,3 +1,37 @@
+Checks:
+ -Setup Page:
+	-Struggle name
+	-Favourite colour
+	-Rep colour
+	-Rules
+	-Map Setup
+		-Confirm
+		-Reroll
+		-Pick spawn?
+ 
+ -Index
+	-Map
+	-(If > 18hr)
+	-Good/bad buttons
+	-Reason list
+	-Stats
+		-Map ownership %
+		-Days played
+		-Total moves
+		-Good/bad days
+		-Common reaons
+
+ -Extras
+	-About page
+	-Contact page
+	-Home page
+	-Tweak login pages
+	-User account pages
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 User:
 	//Basic user
 	//Props:
