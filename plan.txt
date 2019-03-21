@@ -1,8 +1,8 @@
 Checks:
  -Setup Page:
 	X-Struggle name
-	-Favourite colour
-	-Rep colour
+	X-Favourite colour
+	X-Rep colour
 	-Rules
 	-Map Setup
 		-Confirm

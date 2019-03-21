@@ -11,7 +11,7 @@ namespace EncouroCon.Models
     {
         public int MapID { get; set; }
         public Guid OwnerID { get; set; }
-        [Display (Name = "Struggle Name")]
+        [Display (Name = "Struggle Name:")]
         public string StruggleName { get; set; }
         public string Colours { get; set; }
         public string Planets { get; set; }
