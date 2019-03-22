@@ -7,7 +7,7 @@ function drawEdge(ctx, p1, p2) {
 }
 
 function drawBologna() {
-    var canvas = document.getElementById("canvas");
+    var canvas = document.getElementById("mapCan");
     var ctx = canvas.getContext("2d");
     //var bolval = document.getElementById("holdy").value;
     var bologna = "#f298c5";

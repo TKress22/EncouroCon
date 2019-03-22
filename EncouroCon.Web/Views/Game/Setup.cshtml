@@ -7,11 +7,14 @@
 
 @Html.DisplayNameFor(model => model.StruggleName)
 @Html.EditorFor(model => model.StruggleName)
-@Html.Label("Enter your colour: ")
-@Html.Editor("Colour")
-@Html.Label("Representative colour: ")
-@Html.Editor("Colour")
 <br />
-<canvas id="canvas"></canvas>
+@Html.Label("Enter your favourite colour: ")
+@Html.Editor("PColour")
+<br />
+@Html.Label("Representative colour: ")
+@Html.Editor("RColour")
+<br />
+<canvas id="ruleCan"></canvas>
+<canvas id="mapCan"></canvas>
 <script src="../Scripts/customs/Art.js"></script>
 <script src="../Scripts/customs/MapHandler.js"></script>
