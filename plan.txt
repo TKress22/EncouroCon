@@ -3,14 +3,14 @@ Checks:
 	X-Struggle name
 	X-Favourite colour
 	X-Rep colour
-	-Rules
-	-Map Setup
-		-Confirm
-		-Reroll
+	X-Rules
+	x-Map Setup
+		X-Confirm
+		X-Reroll
 		-Pick spawn?
  
  -Index
-	-Map
+	X-Map
 	-(If > 18hr)
 	-Good/bad buttons
 	-Reason list

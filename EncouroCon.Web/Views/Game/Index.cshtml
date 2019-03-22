@@ -6,13 +6,16 @@
 
 <h2>Index</h2>
 
-<canvas id="mapCan"></canvas>
-<br />
-@Html.DisplayNameFor(model => model.mapServ)
-<br />
-@Html.DisplayNameFor(model => model.dayServ)
-@Html.HiddenFor(model => model.mapServ.GetMapByID(0).Planets)
-
+<div>
+    <canvas id="mapCan"></canvas>
+</div>
+<div>
+    @Html.DisplayNameFor(model => model.mapServ)
+</div>
+<div>
+    @Html.DisplayNameFor(model => model.dayServ)
+    @Html.HiddenFor(model => model.mapServ.GetMapByID(0).Planets)
+</div>
 
 <script src="../Scripts/customs/Art.js"></script>
 <script src="../Scripts/customs/MapHandler.js"></script>

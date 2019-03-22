@@ -1,5 +1,5 @@
 ﻿function drawPlanet(ctx) {
-    console.log("Yeboiiii");
+  
 }
 
 function drawEdge(ctx, p1, p2) {
