@@ -1,12 +1,12 @@
-﻿function drawPlanet(ctx) {
+﻿function drawPlanet(ctx){
   
 }
 
-function drawEdge(ctx, p1, p2) {
+function drawEdge(ctx, p1, p2){
 
 }
 
-function ruleCanvas() {
+function ruleCanvas(){
     var canvas = document.getElementById("ruleCan");
     var ctx = canvas.getContext("2d");
 
@@ -16,7 +16,7 @@ function ruleCanvas() {
     ctx.stroke();
 }
 
-function drawBologna() {
+function drawBologna(){
     var canvas = document.getElementById("mapCan");
     var ctx = canvas.getContext("2d");
     //var bolval = document.getElementById("holdy").value;
