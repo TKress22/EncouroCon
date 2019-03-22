@@ -23,7 +23,7 @@ namespace EncouroCon.Services
                 {
                     OwnerID = _userID,
                     StruggleName = model.StruggleName,
-                    Colours = model.Colours,
+                    Colours = model.FavCol + ", " + model.RepCol,
                     PlanetData = model.Planets,
                     Edges = model.Edges
                 };

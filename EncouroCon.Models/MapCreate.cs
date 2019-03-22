@@ -13,7 +13,10 @@ namespace EncouroCon.Models
         public Guid OwnerID { get; set; }
         [Display (Name = "Struggle Name:")]
         public string StruggleName { get; set; }
-        public string Colours { get; set; }
+        [Display(Name = "Favourite Colour:")]
+        public string FavCol { get; set; }
+        [Display(Name = "Representative Colour:")]
+        public string RepCol { get; set; }
         public string Planets { get; set; }
         public string Edges { get; set; }
     }
