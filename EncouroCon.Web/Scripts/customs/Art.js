@@ -6,6 +6,16 @@ function drawEdge(ctx, p1, p2) {
 
 }
 
+function ruleCanvas() {
+    var canvas = document.getElementById("ruleCan");
+    var ctx = canvas.getContext("2d");
+
+    ctx.beginPath();
+    ctx.fillStyle = "#000000";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.stroke();
+}
+
 function drawBologna() {
     var canvas = document.getElementById("mapCan");
     var ctx = canvas.getContext("2d");

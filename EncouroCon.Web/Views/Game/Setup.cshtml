@@ -5,16 +5,46 @@
 
 <h2>Welcome</h2>
 
-@Html.DisplayNameFor(model => model.StruggleName)
-@Html.EditorFor(model => model.StruggleName)
-<br />
-@Html.Label("Enter your favourite colour: ")
-@Html.Editor("PColour")
-<br />
-@Html.Label("Representative colour: ")
-@Html.Editor("RColour")
-<br />
-<canvas id="ruleCan"></canvas>
-<canvas id="mapCan"></canvas>
+<div>
+    <div>
+        @Html.DisplayNameFor(model => model.StruggleName)
+        @Html.EditorFor(model => model.StruggleName)
+    </div>
+    <div>
+        @Html.Label("Enter your favourite colour: ")
+        @Html.Editor("PColour")
+    </div>
+    <div>
+        @Html.Label("Representative colour: ")
+        @Html.Editor("RColour")
+    </div>
+</div>
+
+<div>
+    <div>
+        <canvas id="ruleCan"></canvas>
+    </div>
+</div>
+
+<div>
+    <div>
+        @Html.Label("Game Map")
+    </div>
+
+    <div>
+        <canvas id="mapCan"></canvas>
+    </div>
+    <div>
+        <button id="confirmBtn">Confirm</button>
+        <button id="rerollBtn">Re-Roll</button>
+    </div>
+</div>
+
+<div>
+    @Html.HiddenFor(model => model.Colours)
+    @Html.HiddenFor(model => model.Planets)
+    @Html.HiddenFor(model => model.Edges)
+</div>
+
 <script src="../Scripts/customs/Art.js"></script>
 <script src="../Scripts/customs/MapHandler.js"></script>
