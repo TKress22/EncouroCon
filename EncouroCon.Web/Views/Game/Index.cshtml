@@ -10,11 +10,22 @@
     <canvas id="mapCan"></canvas>
 </div>
 <div>
-    @Html.DisplayNameFor(model => model.mapServ)
+    @{ 
+//var date = Model.mapServ.GetMapByID(1).LastMove;
+    }
 </div>
 <div>
-    @Html.DisplayNameFor(model => model.dayServ)
-    @Html.HiddenFor(model => model.mapServ.GetMapByID(0).Planets)
+    <input type="radio" id="Ye" name="inp" />
+    <label for="Ye">Ye</label>
+
+    <input type="radio" id="Ye1" name="inp" />
+    <label for="Ye1">Ye</label>
+
+    <input type="radio" id="Ye2" name="inp" />
+    <label for="Ye2">Ye</label>
+
+    <input type="radio" id="Ye3" name="inp" />
+    <label for="Ye3">Ye</label>
 </div>
 
 <script src="../Scripts/customs/Art.js"></script>
