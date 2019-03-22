@@ -72,6 +72,7 @@ namespace EncouroCon.Services
                     new MapFetch
                     {
                         StruggleName = entity.StruggleName,
+                        LastMove = entity.LastMove,
                         Colours = entity.Colours,
                         Planets = entity.PlanetData,
                         Edges = entity.Edges

@@ -10,6 +10,7 @@ namespace EncouroCon.Models
     {
         public int MapID { get; set; }
         public string StruggleName { get; set; }
+        public DateTimeOffset LastMove { get; set; }
         public string Colours { get; set; }
         public string Planets { get; set; }
         public string Edges { get; set; }
