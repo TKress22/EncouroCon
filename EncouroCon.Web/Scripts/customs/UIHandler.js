@@ -2,7 +2,8 @@
     //ruleCanvas();
     setCanvasSize(750, 500);
     document.getElementById("rerollBtn").onclick = loadMap;
-    drawBologna();
+    document.getElementById("FavCol").innerHTML = "#ff0000";
+    document.getElementById("RepCol").innerHTML = "#0000ff";
 }
 
 function index() {

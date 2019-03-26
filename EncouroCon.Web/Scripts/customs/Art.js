@@ -19,6 +19,7 @@ function drawEdges(ctx, eds, plans){
         if (plans[eds[r][0]].owner == plans[eds[r][1]].owner) {
             ctx.strokeStye = plans[eds[r][0]].colour;
             ctx.fillStyle = plans[eds[r][0]].colour;
+            //console.log("ting");
         }
         else {
             ctx.strokeStyle = "#999";

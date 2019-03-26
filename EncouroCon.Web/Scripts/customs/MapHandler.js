@@ -1,7 +1,7 @@
 ﻿var ctx = document.getElementById("mapCan").getContext('2d'); 
 var edges;
 var planets;
-var colours;
+var colours = [];
 var active;
 
 function loadIn(){
@@ -14,25 +14,27 @@ function loadMap() {
     var w, h;
     w = document.getElementById("mapCan").width;
     h = document.getElementById("mapCan").height;
+    colours[0] = document.getElementById("FavCol").innerHTML;
+    colours[1] = document.getElementById("RepCol").innerHTML;
 
     var coords = makePlanets(w, h);
     planets = [];
     edges = makeEdges(coords);
     var spawn = Math.floor(Math.random() * coords.length);
     for (var r = 0; r < coords.length; r++) {
-        planets.push(new planet(coords[r][0], coords[r][1], 2, "#0ff", 1));
+        planets.push(new planet(coords[r][0], coords[r][1], 1, "#0ff", 1));
     }
     setSpawn(spawn);
     render();
 }
 
 function setSpawn(targ) {
-    planets[targ].owner = 1;
+    planets[targ].owner = 0;
     planets[targ].colour = "#f0f";
     planets[targ].value = 10;
     var cons = findConnections(targ);
     for (var r = 0; r < cons.length; r++) {
-        planets[cons[r]].owner = 1;
+        planets[cons[r]].owner = 0;
         planets[cons[r]].colour = "#f0f";
         planets[cons[r]].value = Math.floor(Math.random()*5);
     }
