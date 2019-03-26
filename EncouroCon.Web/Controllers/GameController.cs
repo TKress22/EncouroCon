@@ -60,6 +60,7 @@ namespace EncouroCon.Web.Controllers
             var mapServ = new MapService(ID);
             var dayServ = new DayCommentService(ID);
             map = mapServ.GetMapByID(ID);
+            var tst = (DateTime.Now - map.LastMove).TotalHours;
         }
     }
 }
