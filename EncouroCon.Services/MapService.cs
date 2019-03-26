@@ -60,14 +60,14 @@ namespace EncouroCon.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public MapFetch GetMapByID(int id)
+        public MapFetch GetMapByID(Guid ID)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Map
-                        .Single(e => e.MapID == id && e.OwnerID == _userID);
+                        .Single(e => e.OwnerID == ID);
                 return
                     new MapFetch
                     {

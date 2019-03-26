@@ -11,7 +11,7 @@ Checks:
  
  -Index
 	X-Map
-	-(If > 18hr)
+	X-(If > 18hr)
 	-Good/bad buttons
 	-Reason list
 	-Stats

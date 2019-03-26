@@ -27,11 +27,13 @@ namespace EncouroCon.Web.Controllers
 
     public class HolderModel
     {
-        //public    
+        public MapFetch map;
+        
         public HolderModel(Guid ID)
         {
-            //mapServ = new MapService(ID);
-            //dayServ = new DayCommentService(ID);
+            var mapServ = new MapService(ID);
+            var dayServ = new DayCommentService(ID);
+           // map = mapServ.GetMapByID(ID);
         }
     }
 }

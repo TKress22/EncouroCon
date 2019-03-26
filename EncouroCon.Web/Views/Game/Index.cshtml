@@ -10,27 +10,46 @@
     <canvas id="mapCan"></canvas>
 </div>
 <div>
-    @{ 
-//var date = Model.mapServ.GetMapByID(1).LastMove;
+    @{
+        //var date = Model.map.LastMove.Hour;
+        var date = 2;
+        var hours = (DateTime.Now.Hour - date);
+        @Html.Label(DateTime.Now.Hour.ToString())
+        <br />
+        @Html.Label(hours.ToString())
+        <br />
+        <div>
+            @{ if (hours <= 6)
+                {
+                <div>
+                    <input type="radio" id="Ye" name="inp" value="Ye" />
+                    <label for="Ye" id="Ye" value="Ye">Ye</label>
+
+                    <input type="radio" id="Ye1" name="inp" value="Ye1" />
+                    <label for="Ye1" id="Ye1" value="Ye1">Ye1</label>
+
+                    <input type="radio" id="Ye2" name="inp" value="Ye2" />
+                    <label for="Ye2" id="Ye2" value="Ye2">Ye2</label>
+
+                    <input type="radio" id="Ye3" name="inp" value="Ye3" />
+                    <label for="Ye3" id="Ye3" value="Ye3">Ye3</label>
+                </div>
+                    }
+                    else
+                {
+                <div>Come back soon!</div>
+                }
+            }
+        </div>
     }
 </div>
-<div>
-    <input type="radio" id="Ye" name="inp" value="Ye"/>
-    <label for="Ye" id="Ye" value="Ye">Ye</label>
 
-    <input type="radio" id="Ye1" name="inp" value="Ye1"/>
-    <label for="Ye1" id="Ye1" value="Ye1">Ye1</label>
-
-    <input type="radio" id="Ye2" name="inp" value="Ye2"/>
-    <label for="Ye2" id="Ye2" value="Ye2">Ye2</label>
-
-    <input type="radio" id="Ye3" name="inp" value="Ye3"/>
-    <label for="Ye3" id="Ye3" value="Ye3">Ye3</label>
-</div>
 
 <div>
-    <input type="hidden" id="ugg"/>
-
+    <input type="hidden" id="ugg" />
+    @Html.HiddenFor(model => model.map.Colours)
+    @Html.HiddenFor(model => model.map.Planets)
+    @Html.HiddenFor(model => model.map.Edges)
 </div>
 
 <script src="../Scripts/customs/Art.js"></script>
