@@ -1,8 +1,8 @@
-﻿function drawPlanet(ctx, plans){
+﻿function drawPlanets(ctx, plans){
   
 }
 
-function drawEdge(ctx, eds){
+function drawEdges(ctx, eds){
 
 }
 
