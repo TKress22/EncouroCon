@@ -10,6 +10,21 @@ function loadIn(){
     var temcolours = document.getElementById("Colours").value;
 }
 
+function writeMap() {
+    var planString = "";
+    for (var r = 0; r < planets.length; r++) {
+        var mini = "[" + planets[r].x + "," + planets[r].y + "|" + planets[r].owner + "|" + planets[r].value + "|" + r + "]";
+        planString += mini;
+    }
+    var edgeString = "";
+    for (var r = 0; r < edges.length; r++) {
+        var mini = "(" + edges[r][0] + "," + edges[r][1] + ")";
+        edgeString += mini;
+    }
+    document.getElementById("Planets").value = planString;
+    document.getElementById("Edges").value = edgeString;
+}
+
 function loadMap() {
     var w, h;
     w = document.getElementById("mapCan").width;
@@ -26,6 +41,7 @@ function loadMap() {
     }
     setSpawn(spawn);
     render();
+    writeMap();
 }
 
 function setSpawn(targ) {
