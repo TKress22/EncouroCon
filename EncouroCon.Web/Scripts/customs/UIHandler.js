@@ -9,6 +9,7 @@
 
 function index() {
     setCanvasSize(750, 500);
+    loadIn();
     //drawBologna();
     //document.getElementById("Ye").onclick = updateText; //Use .value instead of .innerHTML *********************
     //document.getElementById("Ye1").onclick = updateText;

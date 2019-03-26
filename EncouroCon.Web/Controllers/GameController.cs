@@ -17,7 +17,7 @@ namespace EncouroCon.Web.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var model = new HolderModel(userId);
-            return View();
+            return View(model);
         }
         public ActionResult Setup()
         {
@@ -59,7 +59,7 @@ namespace EncouroCon.Web.Controllers
         {
             var mapServ = new MapService(ID);
             var dayServ = new DayCommentService(ID);
-           // map = mapServ.GetMapByID(ID);
+            map = mapServ.GetMapByID(ID);
         }
     }
 }
