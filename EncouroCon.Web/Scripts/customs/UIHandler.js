@@ -10,11 +10,11 @@
 function index() {
     setCanvasSize(750, 500);
     loadIn();
-    //drawBologna();
-    //document.getElementById("Ye").onclick = updateText; //Use .value instead of .innerHTML *********************
-    //document.getElementById("Ye1").onclick = updateText;
-    //document.getElementById("Ye2").onclick = updateText;
-    //document.getElementById("Ye3").onclick = updateText;
+    if (document.getElementById("bdBtn")) {
+        document.getElementById("bdBtn").onclick = function () { mover = 1; botMove(); };
+        document.getElementById("gdBtn").onclick = function () { mover = 0; active = true; }
+        document.getElementById("mapCan").onclick = checkClicked;
+    }
 }
 
 function updateText(event) {

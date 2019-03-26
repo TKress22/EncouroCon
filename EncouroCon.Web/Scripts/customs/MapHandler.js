@@ -3,6 +3,7 @@ var edges;
 var planets;
 var colours = [];
 var active;
+var mover;
 
 function loadIn(){
     //var templanets = "[393,429|1|9|0][47,440|1|4|1][488,307|1|7|2][599,93|1|2|3][430,359|1|0|4][272,132|0|2|5][240,228|1|2|6][638,154|1|0|7][657,44|1|9|8][471,453|1|6|9][423,191|1|6|10][704,308|1|9|11][404,169|1|8|12][336,173|1|1|13][165,248|1|5|14][404,441|1|4|15][339,200|1|5|16][108,282|1|1|17][654,138|1|7|18][499,382|1|8|19][189,152|0|3|20][451,132|1|5|21][651,13|1|1|22][214,117|0|10|23][360,113|0|3|24][496,47|1|9|25][520,294|1|8|26][100,158|0|3|27][379,136|1|1|28][106,384|1|0|29][647,313|1|4|30][361,319|1|0|31][241,285|1|4|32][732,412|1|0|33][614,426|1|5|34][205,232|1|6|35]";
@@ -52,7 +53,7 @@ function loadIn(){
                 nameStub += templanets.substring(x, x + 1);
                 x++;
             }
-            planets.push(new planet(xStub, yStub, ownerStub, colours[ownerStub], valueStub));
+            planets.push(new planet(Number(xStub), Number(yStub), Number(ownerStub), colours[ownerStub], Number(valueStub)));
         }
         x += 2;
     }
@@ -155,4 +156,70 @@ function planet(x, y, owner, colour, value) {
     this.owner = owner;
     this.colour = colour;
     this.value = value;
+}
+
+function botMove() {
+    var targets = [];
+    for (var r = 0; r < planets.length; r++) {
+        if (planets[r].owner == 1) {
+            var mini = findConnections(r);
+            for (var t = 0; t < mini.length; t++) {
+                if (planets[mini[t]].owner != 1) {
+                    targets.push(mini[t]);
+                }
+            }
+        }
+    }
+    move(targets[Math.floor(Math.random() * targets.length)]);
+}
+
+function move(targ) {
+    if (planets[targ].owner == mover) {
+        planets[targ].value += 1;
+    }
+    else {
+        if (planets[targ].value > 1) {
+            planets[targ].value -= 1;
+        }
+        else {
+            planets[targ].owner = mover;
+            planets[targ].colour = colours[mover];
+        }
+    }
+    render();
+}
+
+function checkClicked() {
+    if (active) {
+        var canvRect = document.getElementById("mapCan").getBoundingClientRect();
+        var x = (event.clientX - canvRect.left);
+        var y = (event.clientY - canvRect.top);
+        console.log(x + ", " + y);
+        for (var r = 0; r < planets.length; r++) {
+            if (x >= (planets[r].x - 5) && x <= (planets[r].x + 5)) {
+                if (y >= (planets[r].y - 5) && y <= (planets[r].y + 5)) {
+                    console.log("found: " + planets[r].x + ", " + planets[r].y)
+                    if (planets[r].owner == mover) {
+                        move(r);
+                    }
+                    else {
+                        if (checkProxy(r)) {
+                            move(r);
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+    }
+}
+
+function checkProxy(targ) {
+    var proxies = findConnections(targ);
+    for (var r = 0; r < proxies.length; r++) {
+        if (planets[proxies[r]].owner == mover) {
+            return true;
+        }
+    }
+    return false;
 }

@@ -12,24 +12,24 @@
 <div>
     @{
         var date = Model.map.LastMove;
-        var hours = (DateTime.Now - date).TotalHours;
+        var hours = (DateTimeOffset.Now - date).TotalHours;
         <div>
             @{ if (hours >= 18)
                 {
                     <div>
-                        <button>Good</button>
-                        <button>Bad</button>
+                        <button id="gdBtn">Good</button>
+                        <button id="bdBtn">Bad</button>
                     </div>
                     <div>
+                        Got a reason?
+                        <br />
                         <input type="text" id="reasInp" />
                     </div>
                 }
                 else
                 {
                     <div>
-                        Come back in
-                        @Html.Label((hours).ToString())
-                        hour(s)!
+                        Come back later!
                     </div>
                 }
             }
