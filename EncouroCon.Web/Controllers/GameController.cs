@@ -23,6 +23,32 @@ namespace EncouroCon.Web.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Setup(MapCreate model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreateMapService();
+
+            if (service.CreateMap(model))
+            {
+                TempData["SaveResult"] = "Everything saved successfully";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Ruh roh. Something broke...");
+            return View(model);
+        }
+
+        private MapService CreateMapService()
+        {
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new MapService(userID);
+            return service;
+
+        }
     }
 
     public class HolderModel
