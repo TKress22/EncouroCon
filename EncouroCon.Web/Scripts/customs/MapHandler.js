@@ -4,11 +4,13 @@ var planets;
 var colours;
 var active;
 
-function loadMap() {
-
+function loadIn(){
+    var templanets = document.getElementById("Planets").value;
+    var temedges = document.getElementById("Edges").value;
+    var temcolours = document.getElementById("Colours").value;
 }
 
-function render(){
-    drawPlanets(ctx, );
+function render() {
     drawEdges(ctx, edges);
+    drawPlanets(ctx, planets);
 }

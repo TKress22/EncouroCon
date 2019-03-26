@@ -202,8 +202,10 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\customs\Art.js" />
+    <Content Include="Scripts\customs\delaunator.js" />
     <Content Include="Scripts\customs\generator.js" />
     <Content Include="Scripts\customs\MapHandler.js" />
+    <Content Include="Scripts\customs\UIHandler.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />

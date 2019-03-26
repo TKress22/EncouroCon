@@ -1,6 +1,6 @@
 ﻿function setup() {
     drawBologna();
-    ruleCanvas();
+    //ruleCanvas();
     document.getElementById("rerollBtn").onclick = tst;
 }
 

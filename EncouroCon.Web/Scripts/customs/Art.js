@@ -1,5 +1,22 @@
 ﻿function drawPlanets(ctx, plans){
-  
+    for (var r = 0; r < plans.length; r++){
+        ctx.fillStyle = plans[r].colour;
+        ctx.strokeStyle = plans[r].colour;
+        ctx.beginPath();
+        ctx.arc(plans[r].x, plans[r].y, 10, 0, 2 * Math.PI);
+        ctx.fill();
+        if (plans[r].value > 1) {
+            ctx.fillStyle = "#000";
+            ctx.strokeStyle = "#000";
+            ctx.beginPath();
+            ctx.arc(plan[r].x, plan[r].y, 5, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.fillStyle = "#fff";
+            ctx.strokeStye = "#fff";
+            ctx.font = "20px Arial";
+            ctx.fillText(plans[r].value, plans[r].x, plans[r].y);
+        }
+    }
 }
 
 function drawEdges(ctx, eds){
