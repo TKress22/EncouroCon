@@ -11,10 +11,15 @@ function index() {
     setCanvasSize(750, 500);
     loadIn();
     if (document.getElementById("bdBtn")) {
-        document.getElementById("bdBtn").onclick = function () { mover = 1; botMove(); };
-        document.getElementById("gdBtn").onclick = function () { mover = 0; active = true; }
+        document.getElementById("bdBtn").onclick = function () { goodBadClick(); mover = 1; botMove(); };
+        document.getElementById("gdBtn").onclick = function () { goodBadClick(); mover = 0; active = true; }
         document.getElementById("mapCan").onclick = checkClicked;
     }
+}
+
+function goodBadClick() {
+    document.getElementById("bdBtn").disabled = true;
+    document.getElementById("gdBtn").disabled = true;
 }
 
 function updateText(event) {

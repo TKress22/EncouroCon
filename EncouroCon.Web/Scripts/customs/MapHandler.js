@@ -72,7 +72,7 @@ function loadIn(){
                 p2Stub += temedges.substring(x, x + 1);
                 x++;
             }
-            var mini = [p1Stub, p2Stub];
+            var mini = [Number(p1Stub), Number(p2Stub)];
             edges.push(mini);
         }
         x += 2;
@@ -187,6 +187,8 @@ function move(targ) {
         }
     }
     render();
+    active = false;
+    writeMap();
 }
 
 function checkClicked() {
@@ -196,8 +198,8 @@ function checkClicked() {
         var y = (event.clientY - canvRect.top);
         console.log(x + ", " + y);
         for (var r = 0; r < planets.length; r++) {
-            if (x >= (planets[r].x - 5) && x <= (planets[r].x + 5)) {
-                if (y >= (planets[r].y - 5) && y <= (planets[r].y + 5)) {
+            if (x >= (planets[r].x - 10) && x <= (planets[r].x + 10)) {
+                if (y >= (planets[r].y - 10) && y <= (planets[r].y + 10)) {
                     console.log("found: " + planets[r].x + ", " + planets[r].y)
                     if (planets[r].owner == mover) {
                         move(r);
