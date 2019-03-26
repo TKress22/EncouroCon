@@ -1,7 +1,9 @@
 ﻿function setup() {
     //ruleCanvas();
     setCanvasSize(750, 500);
-    document.getElementById("rerollBtn").onclick = loadMap;
+    document.getElementById("rerollBtn").onclick = function (event) {
+        event.preventDefault(); loadMap();
+    };
     document.getElementById("StruggleName").value = "Darkness";
     document.getElementById("FavCol").value = "#ff0000";
     document.getElementById("RepCol").value = "#0000ff";
