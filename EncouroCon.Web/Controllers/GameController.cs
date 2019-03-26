@@ -19,6 +19,25 @@ namespace EncouroCon.Web.Controllers
             var model = new HolderModel(userId);
             return View(model);
         }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult Index(MapFetch model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreateMapService();
+
+            if (service.UpdateMap(model))
+            {
+                TempData["SaveResult"] = "Everything saved successfully";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Ruh roh. Something broke...");
+            return View(model);
+        }
+
         public ActionResult Setup()
         {
             return View();
@@ -60,7 +79,7 @@ namespace EncouroCon.Web.Controllers
             var mapServ = new MapService(ID);
             var dayServ = new DayCommentService(ID);
             map = mapServ.GetMapByID(ID);
-            var tst = (DateTime.Now - map.LastMove).TotalHours;
+            //var tst = (DateTime.Now - map.LastMove).TotalHours;
         }
     }
 }

@@ -5,44 +5,51 @@
 }
 
 <h2>Index</h2>
-
-<div>
-    <canvas id="mapCan"></canvas>
-</div>
-<div>
-    @{
-        var date = Model.map.LastMove;
-        var hours = (DateTimeOffset.Now - date).TotalHours;
-        <div>
-            @{ if (hours >= 18)
-                {
-                    <div>
-                        <button id="gdBtn">Good</button>
-                        <button id="bdBtn">Bad</button>
-                    </div>
-                    <div>
-                        Got a reason?
-                        <br />
-                        <input type="text" id="reasInp" />
-                    </div>
+@using (Html.BeginForm())
+{
+    <div>
+        <canvas id="mapCan"></canvas>
+    </div>
+    <div>
+        @{
+            var date = Model.map.LastMove;
+            var hours = (DateTimeOffset.Now - date).TotalHours;
+            <div>
+                @{ if (hours >= 18)
+                    {
+                        <div>
+                            <button id="gdBtn">Good</button>
+                            <button id="bdBtn">Bad</button>
+                        </div>
+                        <div>
+                            Got a reason?
+                            <br />
+                            <input type="text" id="reasInp" />
+                        </div>
+                    }
+                    else
+                    {
+                        <div>
+                            Come back later!
+                        </div>
+                    }
                 }
-                else
-                {
-                    <div>
-                        Come back later!
-                    </div>
-                }
-            }
-        </div>
-    }
-</div>
+            </div>
+        }
+    </div>
 
-<div>
-    <input type="hidden" id="ugg" />
-    @Html.HiddenFor(model => model.map.Colours)
-    @Html.HiddenFor(model => model.map.Planets)
-    @Html.HiddenFor(model => model.map.Edges)
-</div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+
+    <div>
+        <input type="hidden" id="ugg" />
+        @Html.HiddenFor(model => model.map.Colours)
+        @Html.HiddenFor(model => model.map.Planets)
+        @Html.HiddenFor(model => model.map.Edges)
+        @Html.HiddenFor(model => model.map.LastMove)
+    </div>
+}
 
 <script src="../Scripts/customs/Art.js"></script>
 <script src="../Scripts/customs/UIHandler.js"></script>
