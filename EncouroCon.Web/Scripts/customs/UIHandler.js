@@ -1,6 +1,7 @@
 ﻿function setup() {
     //ruleCanvas();
     setCanvasSize(750, 500);
+    document.getElementById("rerollBtn").onclick = loadMap;
     drawBologna();
 }
 

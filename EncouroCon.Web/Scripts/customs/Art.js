@@ -6,11 +6,6 @@
         ctx.arc(plans[r].x, plans[r].y, 10, 0, 2 * Math.PI);
         ctx.fill();
         if (plans[r].value > 1) {
-            ctx.fillStyle = "#000";
-            ctx.strokeStyle = "#000";
-            ctx.beginPath();
-            ctx.arc(plan[r].x, plan[r].y, 5, 0, 2 * Math.PI);
-            ctx.fill();
             ctx.fillStyle = "#fff";
             ctx.strokeStye = "#fff";
             ctx.font = "20px Arial";

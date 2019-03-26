@@ -1,7 +1,7 @@
 ﻿function makePlanets(w,h) {
-    var padding = 60;
-    var density = .45;
-    var r = 50;
+    var padding = 10;
+    var density = .65;
+    var r = 40;
     var cords = [];
     count = Math.floor(density * (w - 2 * r) * (h - 2 * r) / (r * r * Math.PI));
     for (var r = 0; r < count; r++) {
@@ -62,4 +62,10 @@ function makeTris(coords){
         rep++;
     }
     return triChunks;
+}
+
+function findLength(p0, p1, coords) {
+    var x = coords[p0][0] - coords[p1][0];
+    var y = coords[p0][1] - coords[p1][1];
+    return Math.sqrt(x * x + y * y);
 }
