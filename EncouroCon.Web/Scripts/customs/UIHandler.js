@@ -9,11 +9,11 @@
 
 function index() {
     setCanvasSize(750, 500);
-    drawBologna();
-    document.getElementById("Ye").onclick = updateText; //Use .value instead of .innerHTML *********************
-    document.getElementById("Ye1").onclick = updateText;
-    document.getElementById("Ye2").onclick = updateText;
-    document.getElementById("Ye3").onclick = updateText;
+    //drawBologna();
+    //document.getElementById("Ye").onclick = updateText; //Use .value instead of .innerHTML *********************
+    //document.getElementById("Ye1").onclick = updateText;
+    //document.getElementById("Ye2").onclick = updateText;
+    //document.getElementById("Ye3").onclick = updateText;
 }
 
 function updateText(event) {
