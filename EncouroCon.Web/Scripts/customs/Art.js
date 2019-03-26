@@ -19,8 +19,21 @@
     }
 }
 
-function drawEdges(ctx, eds){
-
+function drawEdges(ctx, eds, plans){
+    for (var r = 0; r < eds.length; r++){
+        if (plans[eds[r][0]].owner == plans[eds[r][1]].owner) {
+            ctx.strokeStye = plans[eds[r][0]].colour;
+            ctx.fillStyle = plans[eds[r][0]].colour;
+        }
+        else {
+            ctx.strokeStyle = "#999";
+            ctx.fillStyle = "#999";
+        }
+        G.lineWidth = 3;
+        G.moveTo(plans[eds[r][0]].x, plans[eds[r][0]].y);
+        G.lineTo(plans[eds[r][1]].x, plans[eds[r][1]].y);
+        G.stroke();
+    }
 }
 
 function ruleCanvas(){
