@@ -11,9 +11,9 @@ Checks:
  
  -Index
 	X-Map
-	X-(If > 18hr)
-	-Good/bad buttons
-	-Reason list
+	 -(If > 18hr)
+	X-Good/bad buttons
+	X-Reason list
 	-Stats
 		-Map ownership %
 		-Days played
