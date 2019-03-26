@@ -1,10 +1,11 @@
 ﻿function setup() {
-    drawBologna();
     //ruleCanvas();
-    document.getElementById("rerollBtn").onclick = tst;
+    setCanvasSize(750, 500);
+    drawBologna();
 }
 
 function index() {
+    setCanvasSize(750, 500);
     drawBologna();
     document.getElementById("Ye").onclick = updateText; //Use .value instead of .innerHTML *********************
     document.getElementById("Ye1").onclick = updateText;
@@ -14,4 +15,11 @@ function index() {
 
 function updateText(event) {
     document.getElementById("ugg").value = this.value;
+}
+
+function setCanvasSize(w,h) {
+    var can = document.getElementById("mapCan");
+
+    can.height = h;
+    can.width = w;
 }

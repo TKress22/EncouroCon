@@ -29,10 +29,10 @@ function drawEdges(ctx, eds, plans){
             ctx.strokeStyle = "#999";
             ctx.fillStyle = "#999";
         }
-        G.lineWidth = 3;
-        G.moveTo(plans[eds[r][0]].x, plans[eds[r][0]].y);
-        G.lineTo(plans[eds[r][1]].x, plans[eds[r][1]].y);
-        G.stroke();
+        ctx.lineWidth = 3;
+        ctx.moveTo(plans[eds[r][0]].x, plans[eds[r][0]].y);
+        ctx.lineTo(plans[eds[r][1]].x, plans[eds[r][1]].y);
+        ctx.stroke();
     }
 }
 

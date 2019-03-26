@@ -1,4 +1,4 @@
-﻿function makePlanets() {
+﻿function makePlanets(w,h) {
     var padding = 60;
     var density = .45;
     var r = 50;
@@ -46,7 +46,7 @@ function makeEdges(coords) {
     return edges;
 }
 
-function makeTris(){
+function makeTris(coords){
     var delaunator = Delaunator.from(coords);
     var tris = delaunator.triangles;
     var triChunks = [];
