@@ -53,7 +53,7 @@ namespace EncouroCon.Services
                 var entity =
                     ctx
                         .Map
-                        .Single(e => e.MapID == id && e.OwnerID == _userID);
+                        .Single(e => e.OwnerID == _userID);
 
                 ctx.Map.Remove(entity);
 

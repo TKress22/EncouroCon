@@ -10,18 +10,6 @@ using System.Web.Mvc;
 
 namespace EncouroCon.Web.Controllers
 {
-    class XData
-    {
-        public string id;
-        public string owner;
-        public string reason;
-        public string colors;
-        public string planets;
-        public string conns;
-        public string lastMove;
-        public bool wasGood;
-        public string struggleName;
-    }
 
     [Authorize]
     public class GameController : Controller
@@ -34,33 +22,16 @@ namespace EncouroCon.Web.Controllers
             model.dayCre = new DayCommentCreate { OwnerID = userId };
             return View(model);
         }
+        
 
-        public ActionResult IndexSubmitJSON(string color,string code)
-        {
-            System.IO.File.WriteAllText(@"C:\bin\john.log", code);
-            XData data = JsonConvert.DeserializeObject<XData>(code);
-            data.colors = data.colors.Replace(" ", ", ").Replace("__EEE_E_EEE__EE_E_E_E_","#");
-            HolderModel model = new HolderModel(Guid.Parse(data.owner));
-            model.dayCre.Reason = data.reason;
-            model.dayCre.OwnerID = (model.map.OwnerID = Guid.Parse(data.owner));
-            model.dayCre.Move = "";
-            model.dayCre.WasGood = data.wasGood;
-            model.dayCre.CreatedDate = DateTimeOffset.Now;
-            model.map.Colours = data.colors;
-            model.map.Edges = data.conns;
-            model.map.LastMove = DateTimeOffset.Parse(data.lastMove);
-            model.map.Planets = data.planets;
-            return IndexFunc(model);
-        }
-
-        public ActionResult IndexFuncPar(string id, string owner, string reason, string colors, string planets, string conns, string lastMove, string wasGoodStr)
+        public ActionResult IndexFuncPar(string id, string owner, string reason, string colors, string planets, string conns, string lastMove, string wasGoodStr, string step)
         {
             bool wasGood = Boolean.Parse(wasGoodStr);
             HolderModel model = new HolderModel(Guid.Parse(owner));
             model.dayCre = new DayCommentCreate { OwnerID = Guid.Parse(owner) };
             model.dayCre.Reason = reason;
             model.dayCre.OwnerID = (model.map.OwnerID = Guid.Parse(owner));
-            model.dayCre.Move = "";
+            model.dayCre.Move = step;
             model.dayCre.WasGood = wasGood;
             model.dayCre.CreatedDate = DateTimeOffset.Now;
             model.map.Colours = colors.Replace("%20"," ").Replace("%23","#").Replace("%COMMA",",");

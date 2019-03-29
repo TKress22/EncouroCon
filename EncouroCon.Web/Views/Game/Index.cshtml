@@ -60,7 +60,8 @@
                     planets : map_Planets.value,
                     conns : map_Edges.value,
                     lastMove : map_LastMove.value,
-                    wasGoodStr : dayCre_WasGood.value.toLowerCase()
+                    wasGoodStr: dayCre_WasGood.value.toLowerCase(),
+                    step : Step.value
                 };
                 var kx = "/Game/IndexFuncPar" + params(data);
                 alert(kx);
@@ -73,10 +74,11 @@
     <div>
         <input type="hidden" id="ugg" />
         @Html.HiddenFor(model => model.map.Colours)
-        @Html.TextAreaFor(model => model.map.Planets,new { style="display:none;" })
+        @Html.TextAreaFor(model => model.map.Planets, new { style = "display:none;" })
         @Html.HiddenFor(model => model.map.Edges)
         <input type="hidden" value="@Model.map.LastMove.ToString("MM/dd/yyyy")" id="map_LastMove" />
         @Html.HiddenFor(model => model.dayCre.WasGood)
+        <input type="hidden" id="Step" />
     </div>
 }
 

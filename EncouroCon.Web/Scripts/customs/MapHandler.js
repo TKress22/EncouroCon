@@ -210,6 +210,7 @@ function move(targ) {
     render();
     active = false;
     writeMap();
+    document.getElementById("Step").value = mover + "|" + targ;
 }
 
 function checkClicked() {
