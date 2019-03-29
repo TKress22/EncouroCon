@@ -24,7 +24,7 @@
                         <div>
                             Got a reason?
                             <br />
-                            <input type="text" id="reasInp" />
+                            @Html.TextBoxFor(model => model.dayCre.Reason, new { id = "reasonIn" })
                         </div>
                     }
                     else
@@ -39,7 +39,33 @@
     </div>
 
     <div>
-        <input type="submit" value="Submit" />
+        @Html.ActionLink("Submit", "IndexFunc", new { ID = Model.guid })
+        <a href="javascript:submit();">Submit</a>
+        <script>
+            function params(obj) {
+                var str = "?";
+                for (var key in obj) {
+                    if (str != "?") str += "&";
+                    str += key;
+                    str += "=" + obj[key];
+                }
+                return str;
+            }
+            function submit() {
+                var data = {
+                    id : "@Model.guid",
+                    owner : "@Model.dayCre.OwnerID",
+                    reason: reasonIn.value,
+                    colors: map_Colours.value.replace(",", ""),
+                    planets : map_Planets.value,
+                    conns : map_Edges.value,
+                    lastMove : map_LastMove.value,
+                    wasGood : dayCre_WasGood.value.toLowerCase()
+                };
+                window.location.href = "/Game/IndexFuncPar" + params(data);
+                //window.location.href = "/Game/IndexFunc?ID="+id+"&reason="+k+"&wasGood="+wasGood+"&lastMove="+lastMove+"&conns="+conns+"&planets="+planets+"&colors="+colors+"&owner="+owner;
+            }
+        </script>
     </div>
 
     <div>
@@ -48,6 +74,7 @@
         @Html.HiddenFor(model => model.map.Planets)
         @Html.HiddenFor(model => model.map.Edges)
         @Html.HiddenFor(model => model.map.LastMove)
+        @Html.HiddenFor(model => model.dayCre.WasGood)
     </div>
 }
 

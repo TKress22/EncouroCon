@@ -13,8 +13,8 @@ function index() {
     setCanvasSize(750, 500);
     loadIn();
     if (document.getElementById("bdBtn")) {
-        document.getElementById("bdBtn").onclick = function () { goodBadClick(); mover = 1; botMove(); };
-        document.getElementById("gdBtn").onclick = function () { goodBadClick(); mover = 0; active = true; }
+        document.getElementById("bdBtn").onclick = function () { goodBadClick(); mover = 1; botMove(); document.getElementById("dayCre_WasGood").value = false;};
+        document.getElementById("gdBtn").onclick = function () { goodBadClick(); mover = 0; active = true; document.getElementById("dayCre_WasGood").value = true;}
         document.getElementById("mapCan").onclick = checkClicked;
     }
 }

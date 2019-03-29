@@ -22,5 +22,7 @@ namespace EncouroCon.Data
 
         [Required]
         public DateTimeOffset CreatedDate { get; set; }
+
+        public string Move { get; set; } //Format: mover|id
     }
 }

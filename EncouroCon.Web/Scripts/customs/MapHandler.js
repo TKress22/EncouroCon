@@ -84,7 +84,7 @@ function loadIn(){
 function writeMap() {
     var planString = "";
     for (var r = 0; r < planets.length; r++) {
-        var mini = "[" + planets[r].x + "," + planets[r].y + "|" + planets[r].owner + "|" + planets[r].value + "|" + r + "]";
+        var mini = "[" + planets[r].x + "," + planets[r].y + "|" + planets[r].owner + "|" + planets[r].value + "|" + planets[r].name + "]";
         planString += mini;
     }
     var edgeString = "";
@@ -92,8 +92,14 @@ function writeMap() {
         var mini = "(" + edges[r][0] + "," + edges[r][1] + ")";
         edgeString += mini;
     }
-    document.getElementById("Planets").value = planString;
-    document.getElementById("Edges").value = edgeString;
+    if (!document.getElementById("Planets")) {
+        document.getElementById("map_Planets").value = planString;
+        document.getElementById("map_Edges").value = edgeString;
+    }
+    else {
+        document.getElementById("Planets").value = planString;
+        document.getElementById("Edges").value = edgeString;
+    } 
 }
 
 function loadMap() {
@@ -150,12 +156,23 @@ function render() {
     drawPlanets(ctx, planets);
 }
 
+function makeName() {
+    var chunks = ["ra", "fa", "da", "ga", "ta", "ha", "sa", "do", "go", "ro", "to", "bo", "so", "ho", "si", "di", "gi", "ki", "ti", "ri", "hi", "ge", "te", "he", "se", "be"];
+    var name = "";
+    var count = Math.floor((Math.random() * 4) + 2);
+    for (var r = 0; r < count; r++) {
+        name += chunks[Math.floor(Math.random() * chunks.length)];
+    }
+    return name;
+}
+
 function planet(x, y, owner, colour, value) {
     this.x = x;
     this.y = y;
     this.owner = owner;
     this.colour = colour;
     this.value = value;
+    this.name = makeName();
 }
 
 function botMove() {

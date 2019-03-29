@@ -12,6 +12,7 @@ namespace EncouroCon.Models
         public int CommentID { get; set; }
         public bool WasGood { get; set; }
         public string Reason { get; set; }
+        public string Move { get; set; }
 
         [Display (Name = "Day")]
         public DateTimeOffset Created { get; set; }

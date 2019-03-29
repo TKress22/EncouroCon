@@ -11,6 +11,7 @@ namespace EncouroCon.Models
         public Guid OwnerID { get; set; }
         public bool WasGood { get; set; }
         public string Reason { get; set; }
+        public string Move { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
     }
 }

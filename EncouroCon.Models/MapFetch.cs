@@ -8,7 +8,8 @@ namespace EncouroCon.Models
 {
    public class MapFetch
     {
-        public int MapID { get; set; }
+        public int MapID { get; set; } = 0;
+        public Guid OwnerID { get; set; }
         public string StruggleName { get; set; }
         public DateTimeOffset LastMove { get; set; }
         public string Colours { get; set; }

@@ -39,8 +39,8 @@ namespace EncouroCon.Services
             {
                 var entity =
                     ctx
-                        .Map
-                        .Single(e => e.MapID == model.MapID && e.OwnerID == _userID);
+                        .Map.Where(e => e.OwnerID == _userID)
+                        .Single();
 
                 entity.PlanetData = model.Planets;
                 return ctx.SaveChanges() == 1;
@@ -71,6 +71,7 @@ namespace EncouroCon.Services
                 return
                     new MapFetch
                     {
+                        OwnerID = entity.OwnerID,
                         StruggleName = entity.StruggleName,
                         LastMove = entity.LastMove,
                         Colours = entity.Colours,

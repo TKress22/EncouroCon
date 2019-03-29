@@ -25,6 +25,7 @@ namespace EncouroCon.Services
                     OwnerID = _userID,
                     WasGood = model.WasGood,
                     Reason = model.Reason,
+                    Move = model.Move,
                     CreatedDate = model.CreatedDate
                 };
             using (var ctx = new ApplicationDbContext())
@@ -33,14 +34,28 @@ namespace EncouroCon.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool EditComment(DayCommentListItem model)
+        public IEnumerable<DayCommentListItem> FetchUserComments()
         {
-            return true;
-        }
-        public bool DeleteComment(int id)
-        {
-            return true;
-        }
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .DayComment
+                        .Where(e => e.OwnerID == _userID)
+                        .Select(
+                            e =>
+                                new DayCommentListItem
+                                {
+                                    CommentID = e.CommentID,
+                                    WasGood = e.WasGood,
+                                    Reason = e.Reason,
+                                    Move = e.Move,
+                                    Created = e.CreatedDate
+                                }
+                        );
 
+                return query.ToArray();
+            }
+        }
     }
 }
