@@ -56,13 +56,15 @@
                     id : "@Model.guid",
                     owner : "@Model.dayCre.OwnerID",
                     reason: reasonIn.value,
-                    colors: map_Colours.value.replace(",", ""),
+                    colors: map_Colours.value.replace(" ", "").replace("#", "%23").replace("#", "%23"),
                     planets : map_Planets.value,
                     conns : map_Edges.value,
                     lastMove : map_LastMove.value,
-                    wasGood : dayCre_WasGood.value.toLowerCase()
+                    wasGoodStr : dayCre_WasGood.value.toLowerCase()
                 };
-                window.location.href = "/Game/IndexFuncPar" + params(data);
+                var kx = "/Game/IndexFuncPar" + params(data);
+                alert(kx);
+                window.location.href = kx;
                 //window.location.href = "/Game/IndexFunc?ID="+id+"&reason="+k+"&wasGood="+wasGood+"&lastMove="+lastMove+"&conns="+conns+"&planets="+planets+"&colors="+colors+"&owner="+owner;
             }
         </script>
@@ -71,9 +73,9 @@
     <div>
         <input type="hidden" id="ugg" />
         @Html.HiddenFor(model => model.map.Colours)
-        @Html.HiddenFor(model => model.map.Planets)
+        @Html.TextAreaFor(model => model.map.Planets,new { style="display:none;" })
         @Html.HiddenFor(model => model.map.Edges)
-        @Html.HiddenFor(model => model.map.LastMove)
+        <input type="hidden" value="@Model.map.LastMove.ToString("MM/dd/yyyy")" id="map_LastMove" />
         @Html.HiddenFor(model => model.dayCre.WasGood)
     </div>
 }

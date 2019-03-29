@@ -55,7 +55,7 @@ namespace EncouroCon.Web.Controllers
 
         public ActionResult IndexFuncPar(string id, string owner, string reason, string colors, string planets, string conns, string lastMove, string wasGoodStr)
         {
-            bool wasGood = false;// = Boolean.Parse(wasGoodStr);
+            bool wasGood = Boolean.Parse(wasGoodStr);
             HolderModel model = new HolderModel(Guid.Parse(owner));
             model.dayCre = new DayCommentCreate { OwnerID = Guid.Parse(owner) };
             model.dayCre.Reason = reason;
@@ -63,9 +63,9 @@ namespace EncouroCon.Web.Controllers
             model.dayCre.Move = "";
             model.dayCre.WasGood = wasGood;
             model.dayCre.CreatedDate = DateTimeOffset.Now;
-            model.map.Colours = colors;
+            model.map.Colours = colors.Replace("%20"," ").Replace("%23","#").Replace("%COMMA",",");
             model.map.Edges = conns;
-            //model.map.LastMove = DateTimeOffset.Parse(lastMove);
+            model.map.LastMove = DateTimeOffset.Parse(lastMove);
             model.map.Planets = planets;
             return IndexFunc(model);
         }
